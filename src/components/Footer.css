@@ -1,0 +1,128 @@
+.footer {
+  --cream: #f5f0e8;
+  --charcoal: #1a1a1a;
+  --warm-border: #e8e0d4;
+  --warm-gray: #7a7368;
+  --font-sans: "DM Sans", system-ui, -apple-system, sans-serif;
+
+  border-top: 1px solid var(--warm-border);
+  padding: 2rem 1rem;
+  font-family: var(--font-sans);
+  background: var(--cream);
+}
+
+@media (min-width: 480px) {
+  .footer {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.footer__container {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.footer__top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .footer__top {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.footer__logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.footer__logo-img {
+  height: 2.75rem;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.footer__tagline {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--warm-gray);
+  font-weight: 300;
+}
+
+.footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.footer__link {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--warm-gray);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer__link:hover {
+  color: var(--charcoal);
+}
+
+.footer__bottom {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid color-mix(in srgb, var(--warm-border) 50%, transparent);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .footer__bottom {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.footer__copy {
+  margin: 0;
+  font-size: 11px;
+  color: color-mix(in srgb, var(--warm-gray) 50%, transparent);
+  font-weight: 300;
+}
+
+.footer__email {
+  font-size: 11px;
+  color: color-mix(in srgb, var(--warm-gray) 70%, transparent);
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  word-break: break-all;
+}
+
+.footer__email:hover {
+  color: var(--charcoal);
+}

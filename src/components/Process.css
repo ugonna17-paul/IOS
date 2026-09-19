@@ -1,0 +1,355 @@
+.process {
+  --cream: #f5f0e8;
+  --off-white: #faf8f4;
+  --charcoal: #1a1a1a;
+  --warm-border: #e8e0d4;
+  --warm-gray: #7a7368;
+  --emerald: #2d6a4f;
+  --emerald-mid: #40916c;
+  --emerald-pale: #d8ede4;
+  --card: #ffffff;
+  --font-sans: "DM Sans", system-ui, -apple-system, sans-serif;
+  --font-serif: "DM Serif Display", Georgia, "Times New Roman", serif;
+
+  padding: 4rem 1rem;
+  overflow: hidden;
+  font-family: var(--font-sans);
+  background: var(--cream);
+  color: var(--charcoal);
+}
+
+@media (min-width: 480px) {
+  .process {
+    padding: 5rem 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .process {
+    padding: 7rem 2rem;
+  }
+}
+
+.process__container {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.process__header {
+  margin-bottom: 4rem;
+  max-width: 36rem;
+}
+
+.process__eyebrow {
+  margin: 0 0 1rem;
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: var(--emerald);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.process__title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.875rem, 6vw, 3rem);
+  font-weight: 700;
+  color: var(--charcoal);
+  line-height: 1.1;
+}
+
+.process__title-muted {
+  font-style: normal;
+  color: var(--warm-gray);
+}
+
+.process__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .process__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.process__line {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .process__line {
+    display: block;
+    position: absolute;
+    top: 3.5rem;
+    left: calc(12.5% + 16px);
+    right: calc(12.5% + 16px);
+    height: 1px;
+    background: var(--warm-border);
+    z-index: 0;
+  }
+}
+
+.process__col {
+  position: relative;
+  z-index: 10;
+}
+
+@media (min-width: 1024px) {
+  .process__col {
+    padding: 0 0.5rem;
+  }
+}
+
+.process__connector {
+  display: flex;
+  justify-content: center;
+  margin: 0.75rem 0;
+}
+
+.process__connector::before {
+  content: "";
+  width: 1px;
+  height: 2rem;
+  background: var(--warm-border);
+}
+
+@media (min-width: 1024px) {
+  .process__connector {
+    display: none;
+  }
+}
+
+.process-card {
+  padding: 1.25rem;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+@media (min-width: 480px) {
+  .process-card {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .process-card {
+    padding: 1.75rem;
+  }
+}
+
+@media (max-width: 1023px) {
+  .process-card {
+    transform: none !important;
+  }
+}
+
+.process-card:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.process-card--card {
+  background: var(--card);
+  border: 1px solid var(--warm-border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.process-card--card .process-card__watermark {
+  color: rgba(26, 26, 26, 0.05);
+}
+
+.process-card--card .process-card__dot {
+  background: var(--emerald-pale);
+  color: var(--emerald);
+}
+
+.process-card--card .process-card__phase-label {
+  color: var(--emerald);
+}
+
+.process-card--card .process-card__phase {
+  color: var(--charcoal);
+}
+
+.process-card--card .process-card__desc {
+  color: var(--warm-gray);
+}
+
+.process-card--off-white {
+  background: var(--off-white);
+  border: 1px solid var(--warm-border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.process-card--off-white .process-card__watermark {
+  color: rgba(26, 26, 26, 0.05);
+}
+
+.process-card--off-white .process-card__dot {
+  background: var(--emerald-pale);
+  color: var(--emerald);
+}
+
+.process-card--off-white .process-card__phase-label {
+  color: var(--emerald);
+}
+
+.process-card--off-white .process-card__phase {
+  color: var(--charcoal);
+}
+
+.process-card--off-white .process-card__desc {
+  color: var(--warm-gray);
+}
+
+.process-card--emerald {
+  background: var(--emerald);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14);
+}
+
+.process-card--emerald .process-card__watermark {
+  color: rgba(255, 255, 255, 0.1);
+}
+
+.process-card--emerald .process-card__dot {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.process-card--emerald .process-card__phase-label {
+  color: var(--emerald-pale);
+}
+
+.process-card--emerald .process-card__phase {
+  color: #fff;
+}
+
+.process-card--emerald .process-card__desc {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.process-card--charcoal {
+  background: var(--charcoal);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14);
+}
+
+.process-card--charcoal .process-card__watermark {
+  color: rgba(255, 255, 255, 0.1);
+}
+
+.process-card--charcoal .process-card__dot {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.process-card--charcoal .process-card__phase-label {
+  color: var(--emerald-mid);
+}
+
+.process-card--charcoal .process-card__phase {
+  color: #fff;
+}
+
+.process-card--charcoal .process-card__desc {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.process-card__watermark {
+  position: absolute;
+  bottom: -0.75rem;
+  right: -0.5rem;
+  font-family: var(--font-serif);
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+}
+
+.process-card__dot-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.process-card__dot {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.625rem;
+  font-weight: 700;
+}
+
+.process-card__phase-label {
+  margin: 0 0 0.5rem;
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.process-card__phase {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.process-card__desc {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.625;
+  font-weight: 300;
+  position: relative;
+  z-index: 10;
+}
+
+.process-card__bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: var(--emerald);
+  transition: width 0.5s ease;
+}
+
+.process-card__bar--light {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.process-card:hover .process-card__bar {
+  width: 100%;
+}
+
+.process__cta {
+  margin-top: 3.5rem;
+  text-align: center;
+}
+
+.process__cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--charcoal);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.process__cta-link:hover {
+  color: var(--emerald);
+}
+
+.process__cta-link span:last-child {
+  font-size: 1.125rem;
+}
