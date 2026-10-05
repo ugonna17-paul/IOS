@@ -13,7 +13,7 @@ import './App.css'
 function App() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar />
       <Hero />
       <About />
       <Services />
@@ -22,7 +22,11 @@ function App() {
       <Process />
       <WhyUs />
       <Contact />
-      <Footer />
+      <Footer /> */}
+
+      <h2>Please send my balance 
+        #2000 naira thanks
+      </h2>
     </>
   )
 }
