@@ -138,6 +138,17 @@ export default function Contact() {
             </label>
 
             <label className="contact__field">
+              <span className="contact__label">Budget</span>
+              <input
+                type="text"
+                name="budget"
+                className="contact__input"
+                placeholder="Negotiable"
+                disabled={status === "sending"}
+              />
+            </label>
+
+            <label className="contact__field">
               <span className="contact__label">How can we help?</span>
               <textarea
                 name="message"
