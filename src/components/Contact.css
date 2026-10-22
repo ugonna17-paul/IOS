@@ -166,6 +166,145 @@
   }
 }
 
-.contact__submit:hover {
+.contact__submit:hover:not(:disabled) {
   background: var(--emerald);
+}
+
+.contact__submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.contact__honeypot {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  pointer-events: none;
+}
+
+.contact__status {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.contact__status--error {
+  color: #8b3a3a;
+}
+
+.contact__status a {
+  color: inherit;
+  font-weight: 600;
+}
+
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  background: rgba(26, 26, 26, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: contact-modal-fade 0.25s ease;
+}
+
+.contact-modal__card {
+  width: min(100%, 26rem);
+  background: var(--card);
+  border: 1px solid var(--warm-border);
+  padding: 2rem 1.5rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.18);
+  animation: contact-modal-rise 0.3s ease;
+}
+
+@media (min-width: 480px) {
+  .contact-modal__card {
+    padding: 2.5rem 2rem 2rem;
+  }
+}
+
+.contact-modal__icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 0 auto 1.25rem;
+  color: var(--emerald);
+}
+
+.contact-modal__icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.contact-modal__eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: var(--emerald);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.contact-modal__title {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 4vw, 1.875rem);
+  font-weight: 700;
+  color: var(--charcoal);
+  line-height: 1.15;
+}
+
+.contact-modal__text {
+  margin: 0 0 1.75rem;
+  font-size: 0.9375rem;
+  color: var(--warm-gray);
+  font-weight: 300;
+  line-height: 1.625;
+}
+
+.contact-modal__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 8rem;
+  padding: 0.8rem 1.75rem;
+  border: none;
+  background: var(--charcoal);
+  color: var(--cream);
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.contact-modal__button:hover {
+  background: var(--emerald);
+}
+
+@keyframes contact-modal-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes contact-modal-rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
