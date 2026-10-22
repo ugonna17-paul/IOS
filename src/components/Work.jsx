@@ -1,6 +1,3 @@
-import vid1 from "../assets/Vid1.mp4"
-import vid2 from "../assets/vid2.mp4"
-import vid3 from "../assets/Vid3.mp4"
 import "./Work.css"
 
 const projects = [
@@ -11,7 +8,6 @@ const projects = [
     service: "Store Design & Optimization",
     desc: "A Shopify storefront for pet accessories and everyday essentials — built for clear browsing, strong product presentation, and a smooth path from discovery to checkout.",
     tags: ["Shopify", "UX", "Merchandising"],
-    video: vid1,
     url: "https://rbtconceptstore.com/",
     layout: "wide",
   },
@@ -22,7 +18,6 @@ const projects = [
     service: "Shopify Store Build & Growth",
     desc: "A wellness and everyday essentials brand store covering fitness, nutrition, and electronics — structured for collections, conversion, and a clean shopping experience.",
     tags: ["Shopify", "Collections", "CRO"],
-    video: vid2,
     url: "https://wellvanna.org/",
     layout: "layered",
   },
@@ -33,26 +28,10 @@ const projects = [
     service: "Store Design & Merchandising",
     desc: "A kids fashion Shopify store focused on clothing, shoes, and accessories — designed for visual merchandising, easy navigation, and confident purchase decisions for parents.",
     tags: ["Shopify", "Fashion", "UX"],
-    video: vid3,
     url: "https://fashionnay.com/",
     layout: "stripe",
   },
 ]
-
-function ProjectVideo({ src, title }) {
-  return (
-    <video
-      className="work-card__video"
-      src={src}
-      autoPlay
-      muted
-      loop
-      playsInline
-      preload="metadata"
-      title={title}
-    />
-  )
-}
 
 export default function Work() {
   const [p1, p2, p3] = projects
@@ -76,7 +55,7 @@ export default function Work() {
 
         <div className="work__list">
           <article className="work-card work-card--wide">
-            <div className="work-card__wide-grid">
+            <div className="work-card__wide-grid work-card__wide-grid--text">
               <div className="work-card__body">
                 <div>
                   <div className="work-card__top">
@@ -108,10 +87,6 @@ export default function Work() {
                   </a>
                 </div>
               </div>
-
-              <div className="work-card__media">
-                <ProjectVideo src={p1.video} title={p1.name} />
-              </div>
             </div>
           </article>
 
@@ -119,9 +94,6 @@ export default function Work() {
             <article className="work-card work-card--layered">
               <div className="work-card__shadow" />
               <div className="work-card__layered-main">
-                <div className="work-card__media work-card__media--compact">
-                  <ProjectVideo src={p2.video} title={p2.name} />
-                </div>
                 <div className="work-card__panel">
                   <div className="work-card__top">
                     <div>
@@ -159,9 +131,6 @@ export default function Work() {
             <article className="work-card work-card--stripe">
               <div className="work-card__stripe" />
               <div className="work-card__stripe-main">
-                <div className="work-card__media work-card__media--compact">
-                  <ProjectVideo src={p3.video} title={p3.name} />
-                </div>
                 <div className="work-card__panel work-card__panel--grow">
                   <div>
                     <div className="work-card__top">

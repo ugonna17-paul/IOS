@@ -1,3 +1,5 @@
+import sales1 from "../assets/sales1.jpeg"
+import sales2 from "../assets/sales2.jpeg"
 import "./Results.css"
 
 const expertise = [
@@ -57,6 +59,19 @@ const expertise = [
   },
 ]
 
+const salesShots = [
+  {
+    src: sales1,
+    label: "Live sales dashboard",
+    caption: "Real order volume from a client store",
+  },
+  {
+    src: sales2,
+    label: "Revenue proof",
+    caption: "Performance snapshot from active campaigns",
+  },
+]
+
 export default function Results() {
   return (
     <section id="results" className="results">
@@ -77,6 +92,33 @@ export default function Results() {
               your store&apos;s starting point and goals.
             </p>
           </div>
+        </div>
+
+        <div className="results__proof">
+          <div className="results__proof-head">
+            <p className="results__proof-kicker">Sales Proof</p>
+            <h3 className="results__proof-title">Results from live stores</h3>
+          </div>
+          <div className="results__proof-grid">
+            {salesShots.map((shot) => (
+              <figure key={shot.label} className="results-proof-card">
+                <div className="results-proof-card__media">
+                  <img
+                    src={shot.src}
+                    alt={shot.label}
+                    className="results-proof-card__img"
+                  />
+                </div>
+                <figcaption className="results-proof-card__caption">
+                  <span className="results-proof-card__label">{shot.label}</span>
+                  <span className="results-proof-card__note">{shot.caption}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+          <a href="#testimonials" className="results__proof-link">
+            See client reviews &amp; more proof →
+          </a>
         </div>
 
         <div className="results__grid">
@@ -102,6 +144,11 @@ export default function Results() {
             )
           })}
         </div>
+
+        <p className="results__disclaimer">
+          * Metrics are representative of client outcomes and may vary based on
+          store size, industry, and starting baseline.
+        </p>
       </div>
     </section>
   )
