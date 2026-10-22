@@ -137,16 +137,33 @@ export default function Contact() {
               />
             </label>
 
-            <label className="contact__field">
-              <span className="contact__label">Budget</span>
-              <input
-                type="text"
-                name="budget"
-                className="contact__input"
-                placeholder="Negotiable"
-                disabled={status === "sending"}
-              />
-            </label>
+            <div className="contact__field">
+              <span className="contact__label">Project Budget</span>
+              <div className="contact__budget">
+                <label className="contact__budget-currency" htmlFor="currency">
+                  <span className="contact__sr-only">Currency</span>
+                  <select
+                    id="currency"
+                    name="currency"
+                    className="contact__select"
+                    defaultValue="USD"
+                    disabled={status === "sending"}
+                  >
+                    <option value="USD">USD $</option>
+                    <option value="CAD">CAD $</option>
+                    <option value="GBP">GBP £</option>
+                    <option value="EUR">EUR €</option>
+                  </select>
+                </label>
+                <input
+                  type="text"
+                  name="budget"
+                  className="contact__input contact__input--budget"
+                  placeholder="e.g. 2,500 or Negotiable"
+                  disabled={status === "sending"}
+                />
+              </div>
+            </div>
 
             <label className="contact__field">
               <span className="contact__label">How can we help?</span>
